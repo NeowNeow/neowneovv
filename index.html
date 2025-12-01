@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login </title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="login-center">
+    <div class="login-box">
+      <div class="login-left">
+        <img class="bg-photo" src="gambar 1.jpeg" alt="Background">
+        <div class="avatar-wrap">
+          <img src="gambar 1.jpeg" alt="User">
+        </div>
+      </div>
+      <div class="login-right">
+        <h2>Welcome!</h2>
+        <p>Silakan isi kolom dibawah ini.</p>
+        <form id="loginForm">
+          <label for="username">Username</label>
+          <input type="text" id="username" required>
+
+          <label for="password">Password</label>
+          <input type="password" id="password" required>
+
+          <button type="submit">Login</button>
+          <div id="errorMsg"></div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    document.getElementById('loginForm').onsubmit = function(e) {
+      e.preventDefault();
+      const user = document.getElementById('username').value;
+      const pw = document.getElementById('password').value;
+
+      if (user === 'neosikmagantengskibidi' && pw === 'gitarkupetikbaskubetot') {
+        window.location.href = 'dashboard.html';
+      } else {
+        document.getElementById('errorMsg').textContent = 'Username atau password salah!';
+      }
+    }
+  </script>
+</body>
+</html>
